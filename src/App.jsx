@@ -13,10 +13,14 @@ function App() {
     // console.log(event.target.value);
   }
   function addItem() {
-    setItems((prevdata) => {
-      return [...prevdata, inputText];
-    });
-    setInputText("");
+    if (inputText == "") {
+      alert("fill the todo");
+    } else {
+      setItems((prevdata) => {
+        return [...prevdata, inputText];
+      });
+      setInputText("");
+    }
   }
   function deleteItem(id) {
     setItems((prevItems) => {
